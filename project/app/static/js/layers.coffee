@@ -24,11 +24,11 @@ makeStyle = (category)->
       color: color
       weight: 2
     )
-  return -> (
+  return (feature) -> (
     radius: 5
     fillColor: color
     color: "#000"
-    weight: 1
+    weight: if feature.properties.comment.length then 2 else 1
     opacity: 1
     fillOpacity: 1
   )
