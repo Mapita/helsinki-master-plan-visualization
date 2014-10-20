@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+  color : #035068;
+  font-family: Tahoma,Helvetica,Arial,sans-serif;
+}
+#left-column, #map {
+  position: absolute;
+  top: 0;
+  bottom 0;
+  height: 100%;
+}
+#map {
+  right: 0;
+  width: 68%;
+}
+#left-column {
+  left: 0;
+  width: 32%;
+}
+.layer-adder {
+  font-size: .8em;
+}
+label:hover {
+  cursor: pointer;
+  background: #eee;
+}
+.margined {
+  margin : 0 1em 0 1em;
+}

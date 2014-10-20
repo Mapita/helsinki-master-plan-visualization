@@ -1,0 +1,54 @@
+class LayerAdder extends Backbone.View
+  className : 'layer-adder'
+  events :
+    "change .layer-add" : "layerAdd"
+  render : (category, breakLine) =>
+    @category = category
+    @$el.append "<label><input type='checkbox' class='layer-add'/>#{category.label}</label>"
+    @$el.css('margin-top','1em') if breakLine
+    @
+  layerAdd : (e) =>
+    layer = layersByName[@category.name]
+    if $(e.target).prop('checked')
+      map.addLayer(layer)
+    else
+      map.removeLayer(layer)
+
+onEachFeature = (feature, layer)->
+  layer.bindPopup("<h4>#{humanReadableNames[feature.properties.name]}</h4><p>#{feature.properties.comment}</p>")
+
+makeStyle = (category)->
+  color = category.color
+  if category.type == 'line'
+    return -> (
+      color: color
+      weight: 2
+    )
+  return -> (
+    radius: 5
+    fillColor: color
+    color: "#000"
+    weight: 1
+    opacity: 1
+    fillOpacity: 1
+  )
+
+window.initLayers = (layersByName, categories, features)->
+  window.humanReadableNames = {}
+  lastGroup = categories[0].group
+  for c in categories
+    breakLine = lastGroup != c.group
+    lastGroup = c.group
+    $('.layer-adders').append(new LayerAdder().render(c, breakLine).el)
+    humanReadableNames[c.name] = c.label
+  for f in features
+    name = f.properties.name
+    if name of layersByName
+      layersByName[name].addData f
+    else
+      category = _.filter(categories, (x)->x.name == name)[0]
+      layersByName[name] = L.geoJson(f,
+        onEachFeature: onEachFeature
+        style : makeStyle(category)
+        pointToLayer : (feature, latlng) -> L.circleMarker(latlng)
+      )

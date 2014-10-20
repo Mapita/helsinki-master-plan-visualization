@@ -40,6 +40,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'compressor',
+    'statici18n',
     'app',
 )
 
@@ -93,4 +95,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
 )
-
+COMPRESS_PRECOMPILERS = ( 
+    ('text/coffeescript', 'coffee --compile --stdio'),
+)

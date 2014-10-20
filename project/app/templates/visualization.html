@@ -1,28 +1,130 @@
 {% load i18n %}
+{% load compress %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>{% trans "Helsinki Master Plan Comments" %}</title>
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="{{STATIC_URL}}css/style.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/proj4js/2.1.0/proj4.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+
+    {% compress js %}
     <script type="text/javascript" src="{{STATIC_URL}}js/libs/proj4leaflet.js"></script>
     <script type="text/javascript" src="{{STATIC_URL}}js/features.js"></script>
     <script type="text/javascript" src="{{STATIC_URL}}js/map.js"></script>
-    <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
-    </style>
+    <script type="text/coffeescript" src="{{STATIC_URL}}js/layers.coffee"></script>
+    {% endcompress %}
 </head>
 <body>
 
 
+<div id="left-column">
+    <div class='margined'>
+        <h1>{% trans "Comments for Helsinki Master Plan 2050" %}</h1>
+        <div class="layer-adders">
+        </div>
+    </div>
+</div>
 <div id="map"></div>
+
 <script type="text/javascript">
-var map;
+var map,
+    categories,
+    layersByName = {};
+
+categories = [{
+    label : '{% trans "A place or area for residential building" %}',
+    name : 'paikka-tai-alue-asuinrakentamiselle',
+    group : 1,
+    color : '#03506B'
+  },{
+    label : '{% trans "A place for offices, services or business premises" %}',
+    name : 'paikka-toimistoille-palveluille-tai-liiketiloille',
+    group : 1,
+    color : '#0074A7'
+  },{
+    label : '{% trans "A street side that could be built up" %}',
+    name : 'kadunvarsi-joka-kaipaa-rakentamista',
+    group : 2,
+    color : '#51A8DE'
+  },{
+    label : '{% trans "A plaza or square that is too large, whose surroundings could be built up" %}',
+    name : 'liian-iso-tori-tai-aukio-jonka-ymparille-voisi-rakentaa',
+    group : 2,
+    color : '#78C7CB'
+  },{
+    label : '{% trans "A poorly managed / undefined area that should be improved" %}',
+    name : 'huonosti-hoidettu-epamaarainen-alue-jota-tulisi-parantaa',
+    group : 2,
+    color : '#2BB673'
+  },{
+    label : '{% trans "The area is not necessary for recreation, it could be built up" %}',
+    name : 'alue-ei-ole-virkistykselle-valttamaton-paikalle-voisi-rakentaa',
+    group : 3,
+    color : '#FFD200'
+  },{
+    label : '{% trans "Recreationally important, but could be of better quality" %}',
+    name : 'virkistyksellisesti-tarkea-mutta-saisi-olla-laadultaan-parempi',
+    group : 3,
+    color : '#FF9B57'
+  },{
+    label : '{% trans "This area is unique city nature just as it is" %}',
+    name : 'taalla-on-tallaisenaan-ainutlaatuista-kaupunkiluontoa',
+    group : 3,
+    color : '#FC6E6B'
+  },{
+    label : '{% trans "There should be a pedestrian street here" %}',
+    name : 'taalla-pitaisi-olla-kavelykatu',
+    group : 4,
+    color : '#ffcc00'
+  },{
+    label : '{% trans "There should be more shops and services here on the street-level floors of the buildings" %}',
+    name : 'taalla-pitaisi-olla-enemman-kauppoja-ja-palveluita-rakennusten-kivijaloissa',
+    group : 4,
+    color : '#EDCCCF'
+  },{
+    label : '{% trans "The environment around here looks dreary and should be improved by planting trees, for example" %}',
+    name : 'taalla-ymparisto-nayttaa-ankealta-ja-sita-pitaisi-parantaa-esimerkiksi-puuistutuksin',
+    group : 4,
+    color : '#EDECDF'
+  },{
+    label : '{% trans "My completely new idea" %}',
+    name : 'aivan-uusi-ideani',
+    group : 5,
+    color : '#333'
+  },{
+    label : '{% trans "Public transport connection" %}',
+    name : 'joukkoliikenteen-yhteys',
+    group : 6,
+    type : 'line',
+    color : '#03506B'
+  },{
+    label : '{% trans "Cycling connection" %}',
+    name : 'pyoraily-yhteys',
+    type : 'line',
+    group : 6,
+    color : '#0074a7'
+  },{
+    label : '{% trans "Walking connection" %}',
+    name : 'kavely-yhteys',
+    type : 'line',
+    group : 6,
+    color : '#51a8de'
+  },{
+    label : '{% trans "Car transport connection" %}',
+    name : 'autoliikenteen-yhteys',
+    type : 'line',
+    group : 6,
+    color : '#78c8c8'
+  }
+];
 $(function(){
     map = initMap();
+    initLayers(layersByName, categories, features);
     });
 </script>
 
