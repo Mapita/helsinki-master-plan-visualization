@@ -11,10 +11,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/proj4js/2.1.0/proj4.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+    <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/mapita-statics/features.js.gz"></script>
 
     {% compress js %}
     <script type="text/javascript" src="{{STATIC_URL}}js/libs/proj4leaflet.js"></script>
-    <script type="text/javascript" src="{{STATIC_URL}}js/features.js"></script>
     <script type="text/javascript" src="{{STATIC_URL}}js/map.js"></script>
     <script type="text/coffeescript" src="{{STATIC_URL}}js/layers.coffee"></script>
     {% endcompress %}
