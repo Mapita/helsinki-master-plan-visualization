@@ -17,7 +17,8 @@ class LayerAdder extends Backbone.View
     "<svg height='1em' width='1em'><circle cx='0.5em' cy='0.5em' r='0.4em' stroke-width='1px' stroke='black' fill='#{color}' /></svg>"
 
 onEachFeature = (feature, layer)->
-  layer.bindPopup("<h4>#{humanReadableNames[feature.properties.name]}</h4><p>#{feature.properties.comment}</p>")
+  if feature.properties.comment.length
+    layer.bindPopup("<h4>#{humanReadableNames[feature.properties.name]}</h4><p>#{feature.properties.comment}</p>")
 
 makeStyle = (category)->
   color = category.color
