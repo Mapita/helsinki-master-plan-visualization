@@ -4,7 +4,7 @@ class LayerAdder extends Backbone.View
     "change .layer-add" : "layerAdd"
   render : (category, breakLine) =>
     @category = category
-    @$el.append "<label><input type='checkbox' class='layer-add'/>#{category.label}</label>"
+    @$el.append "<label><input type='checkbox' class='layer-add'/>#{category.label} #{@circle(category.color)}</label>"
     @$el.css('margin-top','1em') if breakLine
     @
   layerAdd : (e) =>
@@ -13,6 +13,8 @@ class LayerAdder extends Backbone.View
       map.addLayer(layer)
     else
       map.removeLayer(layer)
+  circle : (color) ->
+    "<svg height='1em' width='1em'><circle cx='0.5em' cy='0.5em' r='0.4em' stroke-width='1px' stroke='black' fill='#{color}' /></svg>"
 
 onEachFeature = (feature, layer)->
   layer.bindPopup("<h4>#{humanReadableNames[feature.properties.name]}</h4><p>#{feature.properties.comment}</p>")
