@@ -4,7 +4,7 @@ class LayerAdder extends Backbone.View
     "change .layer-add" : "layerAdd"
   render : (category, breakLine) =>
     @category = category
-    @$el.append "<label><input type='checkbox' class='layer-add'/>#{category.label} #{@circle(category.color)}</label>"
+    @$el.append "<label><input type='checkbox' class='layer-add'/>#{@circle(category.color)} #{category.label}</label>"
     @$el.css('margin-top','1em') if breakLine
     @
   layerAdd : (e) =>
