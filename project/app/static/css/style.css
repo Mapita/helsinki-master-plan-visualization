@@ -3,6 +3,10 @@ body {
   padding: 0;
   color : #035068;
   font-family: Tahoma,Helvetica,Arial,sans-serif;
+  font-size: .8em;
+}
+h1 {
+  font-size: 2em;
 }
 #left-column, #map {
   position: absolute;
@@ -17,9 +21,6 @@ body {
 #left-column {
   left: 0;
   width: 32%;
-}
-.layer-adder {
-  font-size: .8em;
 }
 label:hover {
   cursor: pointer;

@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-12-11 10:11+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/visualization.html:6 templates/visualization.html.py:27
+msgid "The results of the Helsinki 2050 map survey"
+msgstr "Helsinki 2050 -karttakyselyn tulokset"
+
+#: templates/visualization.html:28
+msgid ""
+"With this tool, you can review the material of the city plan map survey. The "
+"material available to you includes responses from approximately 4,700 city "
+"residents and 33,000 locations indicated on the map. The survey was open 4 "
+"November–9 December 2013 and it was executed by Mapita Inc. The survey "
+"collected the views of city residents for the preparation of Helsinki’s new "
+"city plan. Read more at"
+msgstr ""
+"Tällä työkalulla voit tarkastella yleiskaavan karttakyselyn aineistoa. Käytössäsi on noin 4 700 kaupunkilaisen vastaukset ja 33 000 karttamerkintää. Kysely oli avoinna 4.11.–9.12.2013 ja sen toteutti Mapita Oy. Kyselyllä koottiin kaupunkilaisten näkemyksiä Helsingin uuden yleiskaavan valmisteluun. Lue lisää:"
+
+#: templates/visualization.html:42
+msgid "A place or area for residential building"
+msgstr "Paikka tai alue asuinrakentamiselle"
+
+#: templates/visualization.html:47
+msgid "A street side that could be built up"
+msgstr "Kadunvarsi, joka kaipaa rakentamista"
+
+#: templates/visualization.html:52
+msgid ""
+"A plaza or square that is too large, whose surroundings could be built up"
+msgstr "Liian iso tori tai aukio, jonka ympärille voisi rakentaa"
+
+#: templates/visualization.html:57
+msgid "The area is not necessary for recreation, it could be built up"
+msgstr "Alue ei ole virkistykselle välttämätön, paikalle voisi rakentaa"
+
+#: templates/visualization.html:62
+msgid "A place for offices, services or business premises"
+msgstr "Paikka toimistoille, palveluille tai liiketiloille"
+
+#: templates/visualization.html:67
+msgid ""
+"There should be more shops and services here on the street-level floors of "
+"the buildings"
+msgstr "Täällä pitäisi olla enemmän kauppoja ja palveluita rakennusten kivijaloissa"
+
+#: templates/visualization.html:72
+msgid "Recreationally important, but could be of better quality"
+msgstr "Virkistyksellisesti tärkeä, mutta saisi olla laadultaan parempi"
+
+#: templates/visualization.html:77
+msgid "This area is unique city nature just as it is"
+msgstr "Täällä on tällaisenaan ainutlaatuista kaupunkiluontoa"
+
+#: templates/visualization.html:82
+msgid ""
+"The environment around here looks dreary and should be improved by planting "
+"trees, for example"
+msgstr "Täällä ympäristö näyttää ankealta ja sitä pitäisi parantaa esimerkiksi puuistutuksin"
+
+#: templates/visualization.html:87
+msgid "A poorly managed / undefined area that should be improved"
+msgstr "Huonosti hoidettu / epämääräinen alue, jota tulisi parantaa"
+
+#: templates/visualization.html:92
+msgid "My completely new idea"
+msgstr "Aivan uusi ideani"
+
+#: templates/visualization.html:97
+msgid "There should be a pedestrian street here"
+msgstr "Täällä pitäisi olla kävelykatu"
+
+#: templates/visualization.html:102
+msgid "Public transport connection"
+msgstr "Joukkoliikenteen yhteys"
+
+#: templates/visualization.html:108
+msgid "Cycling connection"
+msgstr "Pyöräily-yhteys"
+
+#: templates/visualization.html:114
+msgid "Walking connection"
+msgstr "Kävely-yhteys"
+
+#: templates/visualization.html:120
+msgid "Car transport connection"
+msgstr "Autoliikenteen yhteys"

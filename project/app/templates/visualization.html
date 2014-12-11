@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% trans "Helsinki Master Plan Comments" %}</title>
+    <title>{% trans "The results of the Helsinki 2050 map survey" %}</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
@@ -24,7 +24,9 @@
 
 <div id="left-column">
     <div class='margined'>
-        <h1>{% trans "Comments for Helsinki Master Plan 2050" %}</h1>
+        <h1>{% trans "The results of the Helsinki 2050 map survey" %}</h1>
+        <p>{% trans "With this tool, you can review the material of the city plan map survey. The material available to you includes responses from approximately 4,700 city residents and 33,000 locations indicated on the map. The survey was open 4 November–9 December 2013 and it was executed by Mapita Inc. The survey collected the views of city residents for the preparation of Helsinki’s new city plan. Read more at" %} <a href='http://www.yleiskaava.fi' target='_blank'>www.yleiskaava.fi</a>.
+        </p>
         <div class="layer-adders">
         </div>
     </div>
@@ -42,60 +44,60 @@ categories = [{
     group : 1,
     color : '#03506B'
   },{
-    label : '{% trans "A place for offices, services or business premises" %}',
-    name : 'paikka-toimistoille-palveluille-tai-liiketiloille',
-    group : 1,
-    color : '#0074A7'
-  },{
     label : '{% trans "A street side that could be built up" %}',
     name : 'kadunvarsi-joka-kaipaa-rakentamista',
-    group : 2,
+    group : 1,
     color : '#51A8DE'
   },{
     label : '{% trans "A plaza or square that is too large, whose surroundings could be built up" %}',
     name : 'liian-iso-tori-tai-aukio-jonka-ymparille-voisi-rakentaa',
-    group : 2,
+    group : 1,
     color : '#78C7CB'
-  },{
-    label : '{% trans "A poorly managed / undefined area that should be improved" %}',
-    name : 'huonosti-hoidettu-epamaarainen-alue-jota-tulisi-parantaa',
-    group : 2,
-    color : '#2BB673'
   },{
     label : '{% trans "The area is not necessary for recreation, it could be built up" %}',
     name : 'alue-ei-ole-virkistykselle-valttamaton-paikalle-voisi-rakentaa',
-    group : 3,
+    group : 1,
+    color : '#0074A7'
+  },{
+    label : '{% trans "A place for offices, services or business premises" %}',
+    name : 'paikka-toimistoille-palveluille-tai-liiketiloille',
+    group : 2,
     color : '#FFD200'
+  },{
+    label : '{% trans "There should be more shops and services here on the street-level floors of the buildings" %}',
+    name : 'taalla-pitaisi-olla-enemman-kauppoja-ja-palveluita-rakennusten-kivijaloissa',
+    group : 2,
+    color : '#FF9B57'
   },{
     label : '{% trans "Recreationally important, but could be of better quality" %}',
     name : 'virkistyksellisesti-tarkea-mutta-saisi-olla-laadultaan-parempi',
     group : 3,
-    color : '#FF9B57'
+    color : '#EDCCCF'
   },{
     label : '{% trans "This area is unique city nature just as it is" %}',
     name : 'taalla-on-tallaisenaan-ainutlaatuista-kaupunkiluontoa',
     group : 3,
     color : '#FC6E6B'
   },{
-    label : '{% trans "There should be a pedestrian street here" %}',
-    name : 'taalla-pitaisi-olla-kavelykatu',
-    group : 4,
-    color : '#BEBDB2'
-  },{
-    label : '{% trans "There should be more shops and services here on the street-level floors of the buildings" %}',
-    name : 'taalla-pitaisi-olla-enemman-kauppoja-ja-palveluita-rakennusten-kivijaloissa',
-    group : 4,
-    color : '#EDCCCF'
-  },{
     label : '{% trans "The environment around here looks dreary and should be improved by planting trees, for example" %}',
     name : 'taalla-ymparisto-nayttaa-ankealta-ja-sita-pitaisi-parantaa-esimerkiksi-puuistutuksin',
     group : 4,
     color : '#EDECDF'
   },{
+    label : '{% trans "A poorly managed / undefined area that should be improved" %}',
+    name : 'huonosti-hoidettu-epamaarainen-alue-jota-tulisi-parantaa',
+    group : 4,
+    color : '#2BB673'
+  },{
     label : '{% trans "My completely new idea" %}',
     name : 'aivan-uusi-ideani',
     group : 5,
     color : '#333'
+  },{
+    label : '{% trans "There should be a pedestrian street here" %}',
+    name : 'taalla-pitaisi-olla-kavelykatu',
+    group : 6,
+    color : '#BEBDB2'
   },{
     label : '{% trans "Public transport connection" %}',
     name : 'joukkoliikenteen-yhteys',
