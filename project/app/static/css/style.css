@@ -29,3 +29,11 @@ label:hover {
 .margined {
   margin : 0 1em 0 1em;
 }
+a {
+  color: #0074a7;
+  text-decoration: none;
+  line-height: inherit;
+}
+a:hover {
+  color: #00628d;
+}
