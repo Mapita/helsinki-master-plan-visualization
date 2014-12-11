@@ -25,6 +25,7 @@
 <div id="left-column">
     <div class='margined'>
         <h1>{% trans "The results of the Helsinki 2050 map survey" %}</h1>
+        <p>{% if LANGUAGE_CODE == 'en' %}<a href='/fi/'>Suomeksi</a>{% else %}<a href='/en/'>In English</a>{% endif %}</p>
         <p>{% trans "With this tool, you can review the material of the city plan map survey. The material available to you includes responses from approximately 4,700 city residents and 33,000 locations indicated on the map. The survey was open 4 November–9 December 2013 and it was executed by Mapita Inc. The survey collected the views of city residents for the preparation of Helsinki’s new city plan. Read more at" %} <a href='http://www.yleiskaava.fi' target='_blank'>www.yleiskaava.fi</a>.
         </p>
         <div class="layer-adders">
