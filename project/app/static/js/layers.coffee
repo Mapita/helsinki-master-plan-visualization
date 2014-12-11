@@ -33,7 +33,7 @@ makeStyle = (category)->
     color: "#000"
     weight: if feature.properties.comment.length then 2 else 1
     opacity: 1
-    fillOpacity: 1
+    fillOpacity: 0.7
   )
 
 window.initLayers = (layersByName, categories, features)->
